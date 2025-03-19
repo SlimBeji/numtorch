@@ -1,4 +1,4 @@
-A very minimalistic library trying to reproduce PyTorch main features
+An educational and minimalistic library trying to reproduce PyTorch main features
 
 The goal is not to reinvent the wheel but to help curious people understand how certain things are done under the hood in libraries like tensorflow and pytorch and also have a deeper understanding of how the backpropagation algorithm works.
 
