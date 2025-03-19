@@ -1,0 +1,49 @@
+===== Unit Tests for layers ==========
+* relu layer
+* sigmoid layer
+* softmax layer
+* tanh layer
+* mse loss
+* bce loss
+
+==== Article Steps ===================== 
+Guideline: Always compare with how things are implemented in pytorch
+so readers can get better grasp of what Pytorch does behind the scenes
+
+Step 1: Python refresher (getters/setters, decorators, __magic__ methods)
+(Explaining some python features that will be used to build the library)
+    - How properties, getters, setters and magic methods work
+    - How decorators work
+    - What are the magic methods in python
+    - How to share values across multiple modules
+
+Step 2: Calculus refresher: gradiants + jacobian + backpropagtion
+    - Refresher about gradient computation
+    - Generalisation of differentiation with the Jacobian Matrix 
+        => _grad methods will be returning Jacobian matrices
+    - How backpropagation works and how we will use Matrix multiplications of Jacobians
+
+Step 3: The abstract BaseLayer + BaseModel
+    - The general blueprint of the library
+    - All layers will inherit from BaseLayer 
+    - All models will inherit from BaseModel
+
+Step 4: Building the Linear Layer
+    - How we are going to subclass the BaseLayer
+    - Explain code while building uinitests (tests/layers/linear)
+
+Step 5: Activation layers 
+    - Explain activation layers are not trainable
+    - Same as Step 4: Code + Unittest
+
+Step 6: Loss layers
+    - "Loss layers" will have an extra feature compared to the BaseLayer
+    - Explanation of each loss and how grads are computes
+    - Unittests (same as step 4 + 5) 
+
+Step 7: Optimizer and backward pass
+    - Implement the optimizer and how it performs the backward pass
+    - How we will be using matrix multiplication of Jacobians
+
+Step 8: Training a model and comparing with Pytorch
+    - Building a dummy model with numtorch and compare syntax to pytorch
