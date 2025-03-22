@@ -9,4 +9,3 @@ class MSELoss(LossLayer):
 
     def _grad(self, y: np.ndarray, target: np.ndarray) -> np.ndarray:
         return (y - target).mean()
-

@@ -7,6 +7,6 @@ class SGD(BaseOptimizer):
         self.lr = lr
         self.weight_decay = weight_decay
 
-    def  _step(self, param: np.ndarray, loss_grad: np.ndarray) -> np.ndarray:
+    def _step(self, param: np.ndarray, loss_grad: np.ndarray) -> np.ndarray:
         update = (loss_grad + self.weight_decay * param) * self.lr
         return param - update
