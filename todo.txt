@@ -1,5 +1,4 @@
 ===== Unit Tests for layers ==========
-* relu layer
 * sigmoid layer
 * softmax layer
 * tanh layer
