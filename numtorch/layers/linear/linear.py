@@ -1,6 +1,6 @@
 import numpy as np
 
-from layers.base import BaseLayer, param_grad
+from numtorch.layers.base import BaseLayer, param_grad
 
 
 class LinearLayer(BaseLayer):

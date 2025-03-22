@@ -1,8 +1,8 @@
 from typing import TYPE_CHECKING
 
-from layers.base import BaseLayer
-
 import numpy as np
+
+from numtorch.layers.base import BaseLayer
 
 if TYPE_CHECKING:
     from models.base import BaseModel

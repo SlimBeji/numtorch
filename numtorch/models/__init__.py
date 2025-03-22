@@ -1,1 +1,1 @@
-from models.base import BaseModel
+from numtorch.models.base import BaseModel

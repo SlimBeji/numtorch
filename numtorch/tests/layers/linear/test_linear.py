@@ -3,8 +3,8 @@ import re
 import numpy as np
 import pytest
 
-from layers import LinearLayer
-from utils.context import eval
+from numtorch.layers import LinearLayer
+from numtorch.utils.context import eval
 
 
 def test_constructor():

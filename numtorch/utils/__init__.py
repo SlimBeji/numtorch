@@ -1,5 +1,5 @@
-from utils.context import eval
-from utils.functions import (
+from numtorch.utils.context import eval
+from numtorch.utils.functions import (
     sigmoid,
     sigmoid_jacobian,
     sigmoid_prime,
@@ -9,4 +9,4 @@ from utils.functions import (
     tanh_jacobian,
     tanh_prime,
 )
-from utils.loss import mse
+from numtorch.utils.loss import mse

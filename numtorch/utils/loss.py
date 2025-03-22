@@ -1,6 +1,7 @@
-import numpy as np 
+import numpy as np
 
-from utils.functions import sigmoid
+from numtorch.utils.functions import sigmoid
+
 
 def mse(y: np.ndarray, target: np.ndarray) -> float:
     return ((y - target) ** 2).mean()

@@ -1,7 +1,8 @@
 import numpy as np
 
-from layers.base import BaseLayer
-from utils import tanh, tanh_jacobian
+from numtorch.layers.base import BaseLayer
+from numtorch.utils import tanh, tanh_jacobian
+
 
 class TanhActivation(BaseLayer):
     def _forward(self, x: np.ndarray) -> np.ndarray:

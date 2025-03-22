@@ -1,7 +1,8 @@
 import numpy as np
 
-from layers.loss.base import LossLayer
-from utils.loss import bce_with_logits, bce_with_logits_jacobian
+from numtorch.layers.loss.base import LossLayer
+from numtorch.utils.loss import bce_with_logits, bce_with_logits_jacobian
+
 
 class BCEWithLogitsLoss(LossLayer):
     def _forward(self, y: np.ndarray, target: np.ndarray) -> float:

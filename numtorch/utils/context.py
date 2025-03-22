@@ -1,4 +1,4 @@
-from config import Config
+from numtorch.config import Config
 
 
 class eval:

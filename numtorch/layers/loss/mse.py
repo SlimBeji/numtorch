@@ -1,7 +1,8 @@
-from layers.loss.base import LossLayer
 import numpy as np
 
-from utils.loss import mse
+from numtorch.layers.loss.base import LossLayer
+from numtorch.utils.loss import mse
+
 
 class MSELoss(LossLayer):
     def _forward(self, y: np.ndarray, target: np.ndarray) -> float:

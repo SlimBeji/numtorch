@@ -1,6 +1,6 @@
 import numpy as np
 
-from layers.base import BaseLayer
+from numtorch.layers.base import BaseLayer
 
 
 class BaseModel:

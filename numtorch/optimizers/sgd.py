@@ -1,5 +1,7 @@
-from optimizers.base import BaseOptimizer
 import numpy as np
+
+from numtorch.optimizers.base import BaseOptimizer
+
 
 class SGD(BaseOptimizer):
     def __init__(self, model, lr: float = 0.001, weight_decay: float = 0):

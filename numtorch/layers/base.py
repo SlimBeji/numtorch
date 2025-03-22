@@ -2,7 +2,7 @@ from typing import Callable
 
 import numpy as np
 
-from config import Config
+from numtorch.config import Config
 
 
 def param_grad(name: str) -> Callable:
