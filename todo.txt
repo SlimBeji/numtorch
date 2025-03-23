@@ -1,9 +1,10 @@
 ===== Unit Tests for layers ==========
 * sigmoid layer
-* softmax layer
 * tanh layer
 * mse loss
 * bce loss
+* flatten layer
+* build example with mnist
 
 ==== Article Steps ===================== 
 Guideline: Always compare with how things are implemented in pytorch
