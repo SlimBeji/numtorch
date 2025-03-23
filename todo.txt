@@ -1,9 +1,11 @@
+===== Bugs ===========================
+* fix error for sigmoid_jacobian and tanh_jacobian
+
 ===== Unit Tests for layers ==========
-* sigmoid layer
 * tanh layer
+* flatten layer
 * mse loss
 * bce loss
-* flatten layer
 * build example with mnist
 
 ==== Article Steps ===================== 
