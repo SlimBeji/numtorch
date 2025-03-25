@@ -23,7 +23,7 @@ class LinearLayer(BaseLayer):
             raise ValueError(f"Linear Layers does not accept scalars, received {x}")
         if x.ndim > 2:
             raise ValueError(
-                f"Linear Layers does not accept tensors of dimension bigger than 2, received shape {x}"
+                f"Linear Layers does not accept tensors of dimension bigger than 2, received shape {x.shape}"
             )
 
         if x.shape[-1] != self.in_feature:
