@@ -100,15 +100,49 @@ def softmax(x: np.ndarray) -> np.ndarray:
     return exp / exp_sums
 
 
+def softmax_explicit_jacobian(x: np.ndarray) -> np.ndarray:
+    """a verbose and explicit jacobian implementation"""
+    if x.ndim not in [1, 2]:
+        raise ValueError(
+            f"Invalid input shape for the jacobian of an element wise function:\n {x}"
+        )
+
+    if x.ndim == 1:
+        batch = np.expand_dims(x, axis=0)
+    else:
+        batch = x
+
+    batch_size = batch.shape[0]
+    input_size = batch.shape[1]
+    jacobian_shape = (batch_size, input_size, input_size)
+    jacobian = np.zeros(jacobian_shape)
+    for batch_index in range(batch_size):
+        softmax_values = softmax(batch[batch_index])
+        for i in range(input_size):
+            for j in range(input_size):
+                if i == j:
+                    value = (1 - softmax_values[i]) * softmax_values[i]
+                else:
+                    value = -softmax_values[i] * softmax_values[j]
+
+                jacobian[batch_index, i, j] = value
+
+    return jacobian.squeeze() if x.ndim == 1 else jacobian
+
+
 def softmax_jacobian(x: np.ndarray) -> np.ndarray:
-    f = softmax(x)
-    n = x.shape[-1]
-    shape = [*x.shape[:-1], n, n]
-    result = np.zeros(shape)
-    for i in range(n):
-        for j in range(n):
-            if i == j:
-                result[..., i, j] = f[..., i] * (1 - f[..., i])
-            else:
-                result[..., i, j] = -f[..., i] * f[..., j]
-    return result
+    """a numpy optimized softmax jacobian"""
+    if x.ndim not in [1, 2]:
+        raise ValueError(
+            f"Invalid input shape for the jacobian of an element wise function:\n {x}"
+        )
+
+    batch = softmax(x)
+    if x.ndim == 1:
+        batch = np.expand_dims(batch, axis=0)
+    input_size = batch.shape[-1]
+    diag_terms = batch - batch**2
+    jacobian = -batch[:, :, None] * batch[:, None, :]
+    diag_indices = np.arange(input_size)
+    jacobian[:, diag_indices, diag_indices] = diag_terms
+    return jacobian.squeeze() if x.ndim == 1 else jacobian

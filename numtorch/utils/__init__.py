@@ -7,6 +7,7 @@ from numtorch.utils.functions import (
     sigmoid_jacobian,
     sigmoid_prime,
     softmax,
+    softmax_explicit_jacobian,
     softmax_jacobian,
     tanh,
     tanh_explicit_jacobian,
