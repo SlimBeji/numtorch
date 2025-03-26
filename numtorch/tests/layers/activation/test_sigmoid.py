@@ -31,6 +31,30 @@ def test_input_validation():
     ) as exc:
         layer(8.0)
 
+    # Does not accept scalars
+    with pytest.raises(
+        ValueError,
+        match="Expected a 1D or 2D input, received 0D instead",
+    ) as exc:
+        layer(np.array(8))
+
+    # Vectors are accepted
+    result = layer(np.array([1, 2]))
+    assert isinstance(result, np.ndarray)
+    assert result.shape == (2,)
+
+    # Batches of vectors are accepted
+    result = layer(np.array([[1, 2], [3, 4], [5, 6]]))
+    assert isinstance(result, np.ndarray)
+    assert result.shape == (3, 2)
+
+    # 3D tensors or higher are rejected
+    with pytest.raises(
+        ValueError,
+        match="Expected a 1D or 2D input, received 3D instead",
+    ):
+        layer(np.array([[[1, 2]]]))
+
 
 def test_forward():
     # Create Layer
