@@ -1,6 +1,3 @@
-===== Bugs ===========================
-* fix error for sigmoid_jacobian and tanh_jacobian
-
 ===== Unit Tests for layers ==========
 * tanh layer
 * flatten layer
