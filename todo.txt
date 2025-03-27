@@ -1,5 +1,4 @@
 ===== Unit Tests for layers ==========
-* tanh layer
 * flatten layer
 * mse loss
 * bce loss
