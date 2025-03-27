@@ -15,7 +15,7 @@ def param_grad(name: str) -> Callable:
 
 
 class BaseLayer:
-    IS_TRAINABLE = False
+    IS_TRAINABLE = True
 
     def __init__(self, trainable: bool = False):
         self._name = ""
