@@ -9,6 +9,8 @@ if TYPE_CHECKING:
 
 
 class LossLayer(BaseLayer):
+    IS_TRAINABLE = False
+
     def __init__(self, model: "BaseModel"):
         super.__init__(trainable=False)
         self.model = model

@@ -5,6 +5,8 @@ from numtorch.utils.loss import mse
 
 
 class MSELoss(LossLayer):
+    IS_TRAINABLE = False
+
     def _forward(self, y: np.ndarray, target: np.ndarray) -> float:
         return mse(y, target) / 2
 

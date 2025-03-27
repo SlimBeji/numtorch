@@ -5,6 +5,8 @@ from numtorch.utils.loss import bce_with_logits, bce_with_logits_jacobian
 
 
 class BCEWithLogitsLoss(LossLayer):
+    IS_TRAINABLE = False
+
     def _forward(self, y: np.ndarray, target: np.ndarray) -> float:
         return bce_with_logits(y, target)
 

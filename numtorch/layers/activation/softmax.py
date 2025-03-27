@@ -5,6 +5,8 @@ from numtorch.utils import softmax, softmax_jacobian
 
 
 class SoftmaxActivation(BaseLayer):
+    IS_TRAINABLE = False
+
     def _check_input(self, x: np.ndarray) -> np.ndarray:
         """Accept only np.ndarray with two dimensions"""
         if not isinstance(x, np.ndarray):

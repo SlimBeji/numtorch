@@ -5,6 +5,8 @@ from numtorch.utils import tanh, tanh_jacobian
 
 
 class TanhActivation(BaseLayer):
+    IS_TRAINABLE = False
+
     def _check_input(self, x: np.ndarray) -> np.ndarray:
         """Accept all sort of inputs, provided they are
         of type np.ndarray"""
