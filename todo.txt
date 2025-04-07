@@ -1,7 +1,12 @@
 ===== Unit Tests for layers ==========
-* flatten layer
 * mse loss
 * bce loss
+* general behviour of loss layer
+
+
+* general behaviour of layer
+* test for optimizers + models
+
 * build example with mnist
 
 ==== Article Steps ===================== 
