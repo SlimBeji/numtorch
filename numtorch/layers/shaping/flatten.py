@@ -46,5 +46,5 @@ class Flatten(BaseLayer):
             batch_size = x.shape[0]
             output_size = np.prod(x.shape[1:])
             identity: np.ndarray = np.eye(output_size)
-            identity = identity.reshape(output_size, *x.shape[1:])
-            return np.tile(identity, (batch_size, *(1 for _ in range(self.ndim))))
+            single_jacobian = identity.reshape(output_size, *x.shape[1:])
+            return np.stack([single_jacobian] * batch_size, axis=0)
