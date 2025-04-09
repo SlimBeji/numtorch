@@ -12,7 +12,7 @@ class LossLayer(BaseLayer):
     IS_TRAINABLE = False
 
     def __init__(self, model: "BaseModel"):
-        super.__init__(trainable=False)
+        super().__init__(trainable=False)
         self.model = model
 
     def _forward(self, y: np.ndarray, target: np.ndarray) -> float:
