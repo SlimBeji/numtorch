@@ -19,3 +19,11 @@ class BaseModel:
             else:
                 result = layer(result)
         return result
+
+
+def create_sequential_model(layers: list[BaseLayer]) -> BaseModel:
+    class Sequential(BaseModel):
+        def build(self) -> list[BaseLayer]:
+            return layers
+
+    return Sequential
